@@ -20,6 +20,16 @@ const io = new Server(server, {
 //Listening to an event
 io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
+  //setting the connection to the front end and giving it a specific connection
+  socket.on("join_room", (data) => {
+    socket.join(data); //case #1
+    console.log(`User ${socket.id} joined room:${data}`);
+  });
+  //This is for example but we can see that the data that was pulled from here was the information that was passed into the username because we linked it as such.
+  socket.on("username_info", (data) => {
+    socket.join(data); //case #2
+    console.log(`User ${data} is king`);
+  });
   socket.on("disconnect", () => {
     console.log("User Left", socket.id);
   });
