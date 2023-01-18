@@ -22,7 +22,7 @@ io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
   //setting the connection to the front end and giving it a specific connection
   socket.on("join_room", (data) => {
-    socket.join(data); //case #1
+    socket.join(data); //*case #1
     console.log(`User ${socket.id} joined room:${data}`);
   });
   //This is for example but we can see that the data that was pulled from here was the information that was passed into the username because we linked it as such.
@@ -30,6 +30,12 @@ io.on("connection", (socket) => {
     socket.join(data); //case #2
     console.log(`User ${data} is king`);
   });
+  //This is to transfer the message data through socket.io
+  socket.on("send_message", (data) => {
+    //this uses the emit function of socket io to send a message to everyone listening within data.room utilizing the "to" function
+    socket.to(data.room).emit("receive_message", data);
+  });
+  //This is to identify when the user has left
   socket.on("disconnect", () => {
     console.log("User Left", socket.id);
   });
