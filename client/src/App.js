@@ -1,5 +1,6 @@
 //Importing the dependancies
 import "./App.css";
+import Chat from "./Chat";
 import io from "socket.io-client";
 import { useState } from "react";
 
@@ -25,6 +26,7 @@ function App() {
       <input
         type="text"
         placeholder="Name"
+        //OnChange is an even handler that will change the state or set the state to the event target value specified. Ex, when we set name to sam, it will setUsername state to sam.
         onChange={(event) => {
           setUsername(event.target.value);
         }}
@@ -37,6 +39,9 @@ function App() {
         }}
       />
       <button onClick={joinRoom}>Join</button>
+
+      {/* Below we are passing props to Chat */}
+      <Chat socket={socket} username={username} room={room} />
     </div>
   );
 }
