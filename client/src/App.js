@@ -35,6 +35,7 @@ function App() {
           <h4>Join A Chat Room</h4>
 
           <input
+            className="inputBox"
             type="text"
             placeholder="Name"
             //OnChange is an even handler that will change the state or set the state to the event target value specified. Ex, when we set name to sam, it will setUsername state to sam.
@@ -43,13 +44,14 @@ function App() {
             }}
           />
           <input
+            className="inputBox"
             type="text"
             placeholder="Room ID"
             onChange={(event) => {
               setRoom(event.target.value);
             }}
           />
-          <button onClick={joinRoom}>Join</button>
+          <button className="button" onClick={joinRoom}>Join</button>
         </div>
       ) : (
         <Chat socket={socket} username={username} room={room} />
