@@ -31,8 +31,8 @@ function App() {
     <div className="App">
       {/* We are setting a boolean condition on showing either chat or sign in. */}
       {disableChat ? (
-        <div>
-          <h4>Join A Chat</h4>
+        <div className="borderline">
+          <h4>Join A Chat Room</h4>
 
           <input
             type="text"
