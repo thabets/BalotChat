@@ -57,7 +57,7 @@ function Chat({ socket, username, room }) {
           }}
         />
         <button className="button" onClick={sendMessage}>
-          U+02191
+          Send &#8686;
         </button>
       </div>
     </div>
