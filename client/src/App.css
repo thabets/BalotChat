@@ -42,7 +42,7 @@ height: 30vmin;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+    justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -60,10 +60,10 @@ height: 30vmin;
   }
 }
 .inputBox{
- border-radius: .2rem;
- margin:5px;
- background-color: #282c34;
- color:#fff;
+border-radius: .2rem;
+margin:5px;
+background-color: transparent;
+color:#fff;
 box-shadow: 1px 1px 2px 2px#0be4dd;
 
 }
@@ -74,8 +74,27 @@ box-shadow: 1px 1px 2px 2px#0be4dd;
   margin: 10px;
   color:#fff;
   border-color: transparent;
+  margin-top: 50px;
+  min-width: 20vmin;
   
 }
 .button:hover{
     box-shadow: 1px 1px 2px 2px rgba(127, 17, 224, 1);
+}
+.chatbox{
+  min-height: 50vmin;
+  max-height: 50vmin;
+  width: 50vmin;
+  border-radius: .5rem;
+  margin: 5px;
+  background-color: transparent;
+  color: #fff;
+  box-shadow: 1px 1px 2px 2px#0be4dd;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  left: 35%;
+  overflow-wrap: normal;
+  overflow-y: hidden;
+  overflow-x:hidden;
 }

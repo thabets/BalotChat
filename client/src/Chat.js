@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ScrollToBottom from "react-scroll-to-bottom";
 // Socket, username and room are all props that have been added to keep track of all elements in the chat room
 
 function Chat({ socket, username, room }) {
@@ -35,12 +36,14 @@ function Chat({ socket, username, room }) {
   }, [socket]); //* this will call the function within the parenthesis whenever there are changes that happen to the socket, hence we put it in []
   return (
     <div>
-      <div className="header"></div>
-      <p>You Have Joined Room: {room}</p>
-      <div className="body">
-        {theMessages.map((messageContent) => {
-          return <h1>{messageContent.message}</h1>;
-        })}
+      <div className="header "></div>
+      <h4>You Have Joined Room: {room}</h4>
+      <div>
+        <ScrollToBottom className="chatbox">
+          {theMessages.map((messageContent) => {
+            return <p>{messageContent.message}</p>;
+          })}{" "}
+        </ScrollToBottom>
       </div>
       <div className="footer">
         <input
@@ -53,7 +56,9 @@ function Chat({ socket, username, room }) {
             event.key === "Enter" && sendMessage();
           }}
         />
-        <button onClick={sendMessage}>send</button>
+        <button className="button" onClick={sendMessage}>
+          U+02191
+        </button>
       </div>
     </div>
   );
