@@ -12,17 +12,17 @@ function App() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
   //We are setting another state to hight the inputs if someone has joined a chat boolean
-  const [disableChat, setDisableChat] = useState(true);
+  const [login, setLogin] = useState(true);
 
   //This function is to make sure the username and room name are available before joining
   const joinRoom = () => {
     if (username !== "" && room !== "") {
       socket.emit("join_room", room); // *<-- "Emit" is the process of sending, so in this case we are sending the room state to who ever is listening. To listen to emit you will use "Join" which is placed in the server side. This will cause the socket to send the data variable (in this case it is the room with key:"join_room") to any socket.join with key set to "join_room" and so on. So look for case #1 to know where it goes.
       socket.emit("username_info", username); // This is for demonstration and is not actually needed. But if we look here we used username as the key name that would identify what the data will be in case #2. That is because we linked username as the data.
-      setDisableChat(false); //We are setting the disable chat to false so we are able to view the chat once signed in to a room
-    } else if (username == "") {
+      setLogin(false); //We are setting the disable chat to false so we are able to view the chat once signed in to a room
+    } else if (username === "") {
       alert("Please Add A Username");
-    } else if (room == "") {
+    } else if (room === "") {
       alert("Please Enter the Balot Chat Room You Would Like To Access");
     }
   };
@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
       {/* We are setting a boolean condition on showing either chat or sign in. */}
-      {disableChat ? (
+      {login ? (
         <div className="borderline">
           <h4>Join A Chat Room</h4>
 

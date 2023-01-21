@@ -16,10 +16,11 @@ background-image: linear-gradient(90deg, #0be4dd, rgb(98, 243, 1));
   border:  1px;
   box-shadow: 1px 1px 2px 2px#0be4dd;
   max-width: 370px;
-  position:absolute;
-  top:35%;
-  left:35%;
-height: 30vmin;
+  padding: 50px; 
+  height: 30vmin;
+  width: 50%;
+margin: auto;
+
 }
 .App {
   text-align: center;
@@ -86,19 +87,64 @@ box-shadow: 1px 1px 2px 2px#0be4dd;
   max-height: 50vmin;
   width: 50vmin;
   border-radius: .5rem;
-  margin: 5px;
+  margin: auto;
   background-color: transparent;
   color: #fff;
   box-shadow: 1px 1px 2px 2px#0be4dd;
-  display: flex;
   flex-direction: column;
-  top: 50%;
-  left: 35%;
   overflow-wrap: normal;
-  overflow-y: hidden;
+  overflow-y:scroll;
   overflow-x:hidden;
 }
 .footer{
   width: 50vmin;
 margin:auto
+}
+
+#time{
+  font-size: x-small;
+display: inline;
+margin:0px
+}
+#author{
+  display: inline;
+  font-size: x-small;
+  padding: 5px;
+}
+#messageContentS{
+  border-radius: .25rem;
+    border-width: 3px;
+    border-color: black !important;
+    border: 1px;
+    box-shadow: 1px 1px 2px 2px#0be4dd;
+    width: fit-content;
+    margin-left: 5px;
+    padding-left: 10px;
+    padding-right:10px;
+    text-align: left;
+   
+    margin-block-end: 0em !important;
+    overflow-y: hidden;
+}
+#messageContentR{
+  border-radius: .25rem;
+    border-width: 3px;
+    border-color: black !important;
+    border: 1px;
+    box-shadow: 1px 1px 2px 2px rgba(127, 17, 224, 1);
+    width: fit-content;
+    margin-left: 47%;
+    margin-right: 3px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: right;
+float:right;
+    margin-block-end: 0em !important;
+    overflow-y: hidden;
+}
+#other{
+font-size: small;
+}
+.hidden{
+  overflow-y: hidden !important;
 }

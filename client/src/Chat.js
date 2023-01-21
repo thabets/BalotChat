@@ -34,15 +34,37 @@ function Chat({ socket, username, room }) {
       setTheMessages((rasayel) => [...rasayel, data]);
     });
   }, [socket]); //* this will call the function within the parenthesis whenever there are changes that happen to the socket, hence we put it in []
+  
   return (
     <div>
-      <div className="header "></div>
+      <div className="header"></div>
       <h4>You Have Joined Room: {room}</h4>
       <div>
         <ScrollToBottom className="chatbox">
           {theMessages.map((messageContent) => {
-            return <p>{messageContent.message}</p>;
-          })}{" "}
+            return (
+              <div className="hidden">
+                <p
+                  id={
+                    username === messageContent.author
+                      ? "messageContentS"
+                      : "messageContentR"
+                  }
+                >
+                  {messageContent.message}
+                </p>
+
+                <div>
+                  <p id="time">{messageContent.time}</p>
+                  <p id="author">
+                    {username === messageContent.author
+                      ? "you"
+                      : messageContent.author}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </ScrollToBottom>
       </div>
       <div className="footer">
