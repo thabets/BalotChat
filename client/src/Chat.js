@@ -34,7 +34,7 @@ function Chat({ socket, username, room }) {
       setTheMessages((rasayel) => [...rasayel, data]);
     });
   }, [socket]); //* this will call the function within the parenthesis whenever there are changes that happen to the socket, hence we put it in []
-  
+
   return (
     <div>
       <div className="header"></div>

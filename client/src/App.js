@@ -29,6 +29,9 @@ function App() {
 
   return (
     <div className="App">
+      <header>
+        <h1>Balot Chat App</h1>
+      </header>
       {/* We are setting a boolean condition on showing either chat or sign in. */}
       {login ? (
         <div className="borderline">
@@ -51,7 +54,9 @@ function App() {
               setRoom(event.target.value);
             }}
           />
-          <button className="button" onClick={joinRoom}>Join</button>
+          <button className="button" onClick={joinRoom}>
+            Join
+          </button>
         </div>
       ) : (
         <Chat socket={socket} username={username} room={room} />
