@@ -26,7 +26,7 @@ Technologies used are *react *nodejs *css *socket.io *bootstrap *expressjs
 
 ## Screenshot
 
-![Screenshot]()
+![Screenshot](/images/chatapplication.jpg)
 
 ## Active Url
 
